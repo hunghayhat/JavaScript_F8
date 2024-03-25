@@ -401,3 +401,9 @@ console.log(document.forms.testForm)
 
 // Lọc các thẻ a có thuộc tính "name"
 console.log(document.anchors)
+
+// DOM attribute
+var h2Element2 = document.getElementsByClassName('heading-2')[1]
+h2Element2.setAttribute('color', 'red')
+console.log(h2Element2.getAttribute('color'))
+
