@@ -365,10 +365,10 @@ console.log(numbers.myFilter(function (number, index, array) {
 
 // create mySome method
 Array.prototype.mySome = function (cb) {
-    for(var i in this){
-        if (this.hasOwnProperty(i)){
-            if(cb(this[i], i, this))
-            return true
+    for (var i in this) {
+        if (this.hasOwnProperty(i)) {
+            if (cb(this[i], i, this))
+                return true
         }
     }
     return false
@@ -407,3 +407,103 @@ var h2Element2 = document.getElementsByClassName('heading-2')[1]
 h2Element2.setAttribute('color', 'red')
 console.log(h2Element2.getAttribute('color'))
 
+// Inner, Outer HTML
+function render(html) {
+    var add = document.querySelector('ul')
+    add.innerHTML = html
+}
+
+render(`
+    <li>Khóa học HTML</li>
+    <li>Khóa học JS</li>
+    <li>Khóa học PHP</li>
+`)
+
+// DOM styles
+
+var boxElement = document.querySelector('.box')
+console.log(boxElement.style)
+
+boxElement.style.height = '100px'
+boxElement.style.color = 'red'
+
+Object.assign(boxElement.style, {
+    width: '10px',
+    height: '10px',
+    backgroundColor: 'blue'
+})
+
+// ClassList property
+
+console.log(boxElement.classList)
+
+boxElement.classList.add('siu', 'sub-goat')
+
+console.log(boxElement.classList.contains('goat'))
+
+setTimeOut = (() => {
+    boxElement.classList.toggle('red')
+}, 3000)
+
+// DOM events
+
+var h1Element = document.querySelectorAll('h1')
+
+for (var i = 0; i < h1Element.length; ++i) {
+    h1Element[i].onclick = function (e) {
+        console.log(e.target)
+    }
+}
+
+// h1Element.onclick = function(e){
+//     console.log(e)
+// }
+
+//key up/down
+
+var inputElement = document.querySelector('input[type="text"]')
+console.log(inputElement)
+inputElement.onkeyup = function (e) {
+    console.log(e.which)
+
+    switch (e.which) {
+        case 27:
+            console.log('Exit')
+            break;
+    }
+}
+
+document.onkeypress = function (e) {
+    switch (e.which) {
+        case 27:
+            console.log('Exit!')
+            break;
+
+        case 13:
+            console.log("Send chat:")
+            break;
+    }
+}
+
+// preventDefault
+
+var aElement = document.anchors;
+console.log(aElement)
+
+for (var i = 0; i < aElement.length; i++) {
+    aElement[i].onclick = function (e) {
+        if (!e.target.href.startsWith('http://f8.edu.vn'))
+            e.preventDefault()
+    }
+}
+
+ulElement.onmousedown = function(e){
+    e.preventDefault();
+}
+
+var ulElement = document.querySelector('ul')
+ulElement.onclick =
+    function (e) {
+        console.log(e.target)
+    }
+// stopPropagation

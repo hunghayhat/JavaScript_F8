@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1 class="heading">HTML DOM</h1>
-    <h1 class="heading">HTML DOM</h1>
-    <h1 class="heading">HTML DOM</h1>
+<style>
+    ul {
+        display: none;
+    }
+    input:focus ~ ul {
+        display: block
+    }
+</style>
 
-    <a href="" name="youtube">My Youtube</a>
+<body>
+    <input placeholder="Tim kiem" type="text">
+    <ul>
+        <li>JS</li>
+        <li>PHP</li>
+        <li>GO</li>
+    </ul>
+
+   
+    <h1 onclick="console.log(this.innerText)" class="heading">
+        <span>
+            DOM Events
+        </span>
+    </h1>
+
+    <h1>
+        <span>
+            DOM Events 2
+        </span>
+    </h1>
+
+    <h1>
+        <span>
+            DOM Events 3
+        </span>
+    </h1>
+
+    <a href="youtube.com.vn" name="youtube">My Youtube</a>
+    <a href="http://f8.edu.vn" name="google">Tim kiem</a>
+    
 
     <form id="testForm" action="">testForm</form>
     <form id="form-2" action="">form 1</form>
@@ -18,7 +52,7 @@
 
     <p>Hello </p>
 
-    <div class= "box">
+    <div class="box     boxing boxingu">
         <h2 class="heading-2"> heading 2</h2>
         <h2 class="heading-2"> heading 2</h2>
         <h2 class="heading-2"> heading 2</h2>
@@ -27,4 +61,5 @@
 
 </body>
 <script src="main.js"></script>
+
 </html>
