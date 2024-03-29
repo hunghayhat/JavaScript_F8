@@ -417,6 +417,7 @@ render(`
     <li>Khóa học HTML</li>
     <li>Khóa học JS</li>
     <li>Khóa học PHP</li>
+    <li> Khóa học Java</li>
 `)
 
 // DOM styles
