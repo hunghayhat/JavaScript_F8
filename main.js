@@ -508,3 +508,26 @@ ulElement.onclick =
         console.log(e.target)
     }
 // stopPropagation
+
+// Even listener
+var btn = document.getElementById('btn')
+
+//Xử lý nhiều việc khi 1 event xảy ra
+btn.onclick = function () {
+    console.log('Viec 1')
+    console.log('Viec 2')
+    console.log('Viec 3')
+}
+
+// Lắng nghe/ hủy bỏ lắng nghe
+setTimeout(function (){
+    btn.onclick = function () {
+        console.log('Viec 1')
+        console.log('Viec 2')
+        console.log('Viec 3')
+    }
+},3000)
+
+btn.addEventListener('click', function(e) {
+    console.log(Math.random())
+});
